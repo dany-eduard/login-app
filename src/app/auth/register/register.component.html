@@ -1,1 +1,48 @@
-<p>register works!</p>
+<div class="row">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="card">
+      <div class="card-body m-3">
+        <h2 class="text-center">Registrarse</h2>
+        <form>
+          <div class="form-group">
+            <label class="form-label mt-4" for="name">Nombre</label>
+            <input type="text" class="form-control" name="name" id="name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label mt-4" for="lastname">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              name="lastname"
+              id="lastname"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label mt-4" for="email">Correo</label>
+            <input type="mail" class="form-control" name="email" id="email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label mt-4" for="password">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+            />
+          </div>
+          <div class="form-text m-3 text-end">
+            <small
+              >¿Ya tienes cuenta?
+              <a [routerLink]="['/login']">Inicia sesión</a></small
+            >
+          </div>
+          <div class="d-grid gap-2 mt-4">
+            <button class="btn btn-primary btn-lg btn-block">
+              Registrarse
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,40 @@
-<p>login works!</p>
+<div class="row">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="card">
+      <div class="card-body m-3">
+        <h2 class="text-center">Iniciar sesión</h2>
+        <form>
+          <div class="form-group">
+            <label class="form-label mt-4" for="userName">Usuario</label>
+            <input
+              type="text"
+              class="form-control"
+              name="userName"
+              id="userName"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label mt-4" for="password">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+            />
+          </div>
+          <div class="form-text m-3 text-end">
+            <small
+              >¿Aún no tienes una cuenta?
+              <a [routerLink]="['/register']">Registrate</a></small
+            >
+          </div>
+          <div class="d-grid gap-2 mt-4">
+            <button class="btn btn-primary btn-lg btn-block">
+              Iniciar sesión
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
