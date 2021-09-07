@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-body m-3">
         <h2 class="text-center">Iniciar sesión</h2>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
           <div class="form-group">
             <label class="form-label mt-4" for="userName">Usuario</label>
             <input
@@ -11,6 +11,7 @@
               class="form-control"
               name="userName"
               id="userName"
+              formControlName="userName"
             />
           </div>
           <div class="form-group">
@@ -20,6 +21,7 @@
               class="form-control"
               name="password"
               id="password"
+              formControlName="password"
             />
           </div>
           <div class="form-text m-3 text-end">
@@ -29,7 +31,7 @@
             >
           </div>
           <div class="d-grid gap-2 mt-4">
-            <button class="btn btn-primary btn-lg btn-block">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
               Iniciar sesión
             </button>
           </div>

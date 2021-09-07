@@ -3,10 +3,16 @@
     <div class="card">
       <div class="card-body m-3">
         <h2 class="text-center">Registrarse</h2>
-        <form>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
           <div class="form-group">
             <label class="form-label mt-4" for="name">Nombre</label>
-            <input type="text" class="form-control" name="name" id="name" />
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id="name"
+              formControlName="name"
+            />
           </div>
           <div class="form-group">
             <label class="form-label mt-4" for="lastname">Apellido</label>
@@ -15,11 +21,18 @@
               class="form-control"
               name="lastname"
               id="lastname"
+              formControlName="lastname"
             />
           </div>
           <div class="form-group">
             <label class="form-label mt-4" for="email">Correo</label>
-            <input type="mail" class="form-control" name="email" id="email" />
+            <input
+              type="mail"
+              class="form-control"
+              name="email"
+              id="email"
+              formControlName="email"
+            />
           </div>
           <div class="form-group">
             <label class="form-label mt-4" for="password">Contraseña</label>
@@ -28,6 +41,7 @@
               class="form-control"
               name="password"
               id="password"
+              formControlName="password"
             />
           </div>
           <div class="form-text m-3 text-end">
@@ -37,7 +51,7 @@
             >
           </div>
           <div class="d-grid gap-2 mt-4">
-            <button class="btn btn-primary btn-lg btn-block">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
               Registrarse
             </button>
           </div>
