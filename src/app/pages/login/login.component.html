@@ -5,13 +5,15 @@
         <h2 class="text-center">Iniciar sesión</h2>
         <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
           <div class="form-group">
-            <label class="form-label mt-4" for="userName">Usuario</label>
+            <label class="form-label mt-4" for="username">Correo</label>
             <input
-              type="text"
+              type="email"
               class="form-control"
-              name="userName"
-              id="userName"
-              formControlName="userName"
+              name="username"
+              id="username"
+              formControlName="username"
+              required
+              email
             />
           </div>
           <div class="form-group">
@@ -22,6 +24,8 @@
               name="password"
               id="password"
               formControlName="password"
+              minlength="4"
+              required
             />
           </div>
           <div class="form-text m-3 text-end">
