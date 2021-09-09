@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -24,8 +25,11 @@ export class LoginComponent implements OnInit {
       window.localStorage.setItem('user', `${res.nameuser} ${res.surname}`);
       this.router.navigateByUrl('/');
     } catch (error: any) {
-      alert(error.error.Message);
-      console.log('error', error);
+      Swal.fire({
+        title: `${error.error.Message}`,
+        text: 'Vefique sus credenciales',
+        icon: 'error',
+      });
     }
   }
 }

@@ -1,4 +1,23 @@
 <app-navbar></app-navbar>
 <div class="container">
   <h1>Hola {{ user }}</h1>
+  <p>Estos son los blogs más recientes</p>
+  <div *ngFor="let blog of blogs; let i = index" class="card mb-3">
+    <h3 class="card-header">{{ blog.title }}</h3>
+    <div class="card-body">
+      <h5 class="card-title">{{ blog.author }}</h5>
+      <h6 class="card-subtitle text-muted">{{ blog.tile_categorie }}</h6>
+      <div class="card-text mt-3 lh-sm" [innerHTML]="blog.body"></div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+    <div class="card-footer text-muted">{{ blog.update_date | date:"MM/dd/yyyy '-' h:mma" }}</div>
+  </div>
 </div>

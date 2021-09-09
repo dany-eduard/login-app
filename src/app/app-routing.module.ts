@@ -1,25 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CheckLoginGuard } from './guards/check-login.guard';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
-  },
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+    component: HomeComponent,
+    canActivate: [CheckLoginGuard],
   },
   {
     path: 'login',
-    loadChildren: () =>
-      import('./auth/login/login.module').then((m) => m.LoginModule),
+    component: LoginComponent,
   },
   {
     path: 'register',
-    loadChildren: () =>
-      import('./auth/register/register.module').then((m) => m.RegisterModule),
+    component: RegisterComponent,
   },
 ];
 

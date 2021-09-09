@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-6 mx-auto mt-5">
+  <div class="col-sm-8 col-md-6 col-lg-5 col-xl-4 mx-auto mt-5">
     <div class="card">
       <div class="card-body m-3">
         <h2 class="text-center">Registrarse</h2>
@@ -15,6 +15,11 @@
               mminlength="3"
               required
             />
+            <span
+              *ngIf="registerForm.touched&& registerForm.controls['name'].errors"
+              class="text-danger"
+              >Ingrese su nombre</span
+            >
           </div>
           <div class="form-group">
             <label class="form-label mt-4" for="lastname">Apellido</label>
@@ -27,11 +32,16 @@
               minlength="3"
               required
             />
+            <span
+              *ngIf="registerForm.touched&& registerForm.controls['lastname'].errors"
+              class="text-danger"
+              >Ingrese su apellido</span
+            >
           </div>
           <div class="form-group">
             <label class="form-label mt-4" for="email">Correo</label>
             <input
-              type="mail"
+              type="email"
               class="form-control"
               name="email"
               id="email"
@@ -39,6 +49,11 @@
               required
               email
             />
+            <span
+              *ngIf="registerForm.touched&& registerForm.controls['email'].errors"
+              class="text-danger"
+              >Ingrese un correo valido</span
+            >
           </div>
           <div class="form-group">
             <label class="form-label mt-4" for="password">Contraseña</label>
@@ -51,6 +66,11 @@
               minlength="4"
               required
             />
+            <span
+              *ngIf="registerForm.touched&& registerForm.controls['password'].errors"
+              class="text-danger"
+              >La contraseña debe tener minimo 6 caracteres</span
+            >
           </div>
           <div class="form-text m-3 text-end">
             <small

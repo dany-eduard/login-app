@@ -16,28 +16,15 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/']"
-            >
+          <a class="nav-link active" [routerLink]="['/']">
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
       </ul>
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/login']"
-            >Iniciar Sesión
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/logout']"
+          <a style="cursor: pointer" class="nav-link active" (click)="logout()"
             >Cerrar Sesión
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/register']"
-            >Registrate
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
