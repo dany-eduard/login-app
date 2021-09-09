@@ -10,9 +10,9 @@ import Swal from 'sweetalert2';
 export class RegisterComponent implements OnInit {
   mensajeRegistro = '';
   registerForm = new FormGroup({
-    name: new FormControl(''),
-    lastname: new FormControl(''),
-    email: new FormControl(''),
+    nombre: new FormControl(''),
+    apellido: new FormControl(''),
+    correo: new FormControl(''),
     password: new FormControl(''),
   });
   constructor(private authService: AuthService) {}
@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   async onRegister() {
+    console.log(this.registerForm.value);
     try {
       this.mensajeRegistro = await this.authService.register(
         this.registerForm.value

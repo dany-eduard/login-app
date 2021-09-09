@@ -5,52 +5,52 @@
         <h2 class="text-center">Registrarse</h2>
         <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
           <div class="form-group">
-            <label class="form-label mt-4" for="name">Nombre</label>
+            <label class="form-label mt-4" for="nombre">Nombre</label>
             <input
               type="text"
               class="form-control"
-              name="name"
-              id="name"
-              formControlName="name"
+              name="nombre"
+              id="nombre"
+              formControlName="nombre"
               mminlength="3"
               required
             />
             <span
-              *ngIf="registerForm.touched&& registerForm.controls['name'].errors"
+              *ngIf="registerForm.touched&& registerForm.controls['nombre'].errors"
               class="text-danger"
               >Ingrese su nombre</span
             >
           </div>
           <div class="form-group">
-            <label class="form-label mt-4" for="lastname">Apellido</label>
+            <label class="form-label mt-4" for="apellido">Apellido</label>
             <input
               type="text"
               class="form-control"
-              name="lastname"
-              id="lastname"
-              formControlName="lastname"
+              name="apellido"
+              id="apellido"
+              formControlName="apellido"
               minlength="3"
               required
             />
             <span
-              *ngIf="registerForm.touched&& registerForm.controls['lastname'].errors"
+              *ngIf="registerForm.touched&& registerForm.controls['apellido'].errors"
               class="text-danger"
               >Ingrese su apellido</span
             >
           </div>
           <div class="form-group">
-            <label class="form-label mt-4" for="email">Correo</label>
+            <label class="form-label mt-4" for="correo">Correo</label>
             <input
-              type="email"
+              type="correo"
               class="form-control"
-              name="email"
-              id="email"
-              formControlName="email"
+              name="correo"
+              id="correo"
+              formControlName="correo"
               required
               email
             />
             <span
-              *ngIf="registerForm.touched&& registerForm.controls['email'].errors"
+              *ngIf="registerForm.touched&& registerForm.controls['correo'].errors"
               class="text-danger"
               >Ingrese un correo valido</span
             >
