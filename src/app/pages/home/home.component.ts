@@ -8,12 +8,16 @@ import { BlogsService } from 'src/app/services/blogs.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private blogsServices: BlogsService) {}
   user = window.localStorage.getItem('user');
   blogs: BlogsResponse[] = [];
+  loader: boolean;
+
+  constructor(private blogsServices: BlogsService) {
+    this.loader = true;
+  }
 
   async ngOnInit(): Promise<void> {
     this.blogs = await this.blogsServices.getAll();
-    console.log(this.blogs);
+    this.loader = false;
   }
 }

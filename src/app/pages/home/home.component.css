@@ -1,0 +1,4 @@
+div .card-over-flow {
+  height: 45% !important;
+  overflow: auto;
+}
